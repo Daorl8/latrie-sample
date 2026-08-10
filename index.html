@@ -143,7 +143,13 @@
   /* 유튜브 */
   #video{background:#fff}
   .yt{max-width:920px;margin:0 auto;border-radius:calc(var(--r)+6px);overflow:hidden;border:1px solid var(--line);background:#000;position:relative;aspect-ratio:16/9}
-  .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .yt{cursor:pointer;background-color:#000;background-size:cover;background-position:center}
+  .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3}
+  .yt::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.12);z-index:1}
+  .yt .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:70px;height:50px;background:rgba(0,0,0,.72);border-radius:14px;z-index:2;display:grid;place-items:center;transition:background .2s}
+  .yt:hover .play{background:var(--honey)}
+  .yt .play::after{content:"";width:0;height:0;border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+  .yt:hover .play::after{border-left-color:var(--ink)}
   .yt-note{text-align:center;color:var(--faint);font-size:.8rem;margin-top:14px}
 
   /* 제품 */
@@ -323,7 +329,7 @@
       <h2>라트리 성장일기</h2>
       <p>스크롤하면 영상이 소리 없이 재생돼요. (탭하면 소리 켜짐)</p>
     </div>
-    <div class="yt reveal" id="yt" data-embed="https://www.youtube.com/embed/aqTs_YnkZEs?rel=0&playsinline=1&mute=1&autoplay=1&loop=1&playlist=aqTs_YnkZEs"></div>
+    <div class="yt reveal" id="yt" data-id="aqTs_YnkZEs" role="button" tabindex="0" aria-label="라트리 성장일기 영상 재생" style="background-image:url('https://img.youtube.com/vi/aqTs_YnkZEs/hqdefault.jpg')"><span class="play" aria-hidden="true"></span></div>
     <p class="yt-note">※ 데모용 영상입니다 — 실제 브랜드 영상으로 교체 예정</p>
   </div>
 </section>
@@ -415,11 +421,19 @@
   } else { revs.forEach(function(el){el.classList.add('in');}); }
   // 유튜브: 화면 진입 시 무음 자동재생 로드
   var yt=document.getElementById('yt');
-  if(yt){var loaded=false;
-    var yio=new IntersectionObserver(function(es){es.forEach(function(en){
-      if(en.isIntersecting&&!loaded){loaded=true;var f=document.createElement('iframe');f.src=yt.dataset.embed;f.title='라트리 성장일기';f.allow='autoplay; encrypted-media; picture-in-picture';f.setAttribute('allowfullscreen','');yt.appendChild(f);}
-    });},{threshold:0.35});
-    yio.observe(yt);
+  if(yt){var vid=yt.dataset.id, ytloaded=false;
+    function ytLoad(muted){ if(ytloaded)return; ytloaded=true;
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube.com/embed/'+vid+'?rel=0&playsinline=1&autoplay=1'+(muted?'&mute=1&loop=1&playlist='+vid:'');
+      f.title='라트리 성장일기'; f.allow='autoplay; encrypted-media; picture-in-picture'; f.setAttribute('allowfullscreen','');
+      yt.appendChild(f);
+    }
+    yt.addEventListener('click',function(){ytLoad(false);});
+    yt.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();ytLoad(false);}});
+    if('IntersectionObserver' in window){
+      var yio=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting)ytLoad(true);});},{threshold:0.4});
+      yio.observe(yt);
+    }
   }
 </script>
 </body>
