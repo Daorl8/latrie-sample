@@ -85,7 +85,7 @@
   .hero-grid{display:grid;grid-template-columns:1fr;gap:clamp(30px,4vw,54px);align-items:center}
   @media(min-width:880px){.hero-grid{grid-template-columns:1.02fr .98fr}}
   .hero .kick{display:block;margin-bottom:16px}
-  .hero h1{font-family:var(--ser);font-weight:600;font-size:clamp(2rem,5vw,3.4rem);line-height:1.16;color:var(--ink)}
+  .hero h1{font-family:var(--ser);font-weight:600;font-size:clamp(1.95rem,4.5vw,3rem);line-height:1.18;color:var(--ink)}
   .hero h1 .p{background:linear-gradient(transparent 58%,var(--butter) 58%);padding:0 .05em}
   .hero-sub{font-family:var(--kr);max-width:34ch;margin:22px 0 0;color:var(--ink2);font-size:1.04rem;line-height:1.85}
   .hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
@@ -159,7 +159,9 @@
   .prod{border-radius:var(--r);overflow:hidden;aspect-ratio:1;background:var(--cream);position:relative}
   .prod img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .7s}
   @media(hover:hover){.prod:hover img{transform:scale(1.05)}}
-  .prod span{position:absolute;left:12px;bottom:11px;background:rgba(255,255,255,.92);color:var(--ink);font-size:.78rem;font-weight:600;padding:4px 11px;border-radius:30px}
+  .prod .name{position:absolute;left:12px;bottom:11px;background:rgba(255,255,255,.92);color:var(--ink);font-size:.78rem;font-weight:600;padding:4px 11px;border-radius:30px}
+  .prod .base{position:absolute;top:10px;right:10px;color:#fff;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:20px}
+  .prod .base.r{background:var(--honey-d)} .prod .base.w{background:var(--sage-d)}
   .prod-cta{text-align:center;margin-top:clamp(24px,3vw,34px)}
 
   /* 채널 허브 */
@@ -215,7 +217,7 @@
 
   /* 진입 인트로 (동작 줄이기에도 강제 재생 — 미디어쿼리 가드 없음) */
   #intro{position:fixed;inset:0;z-index:200;background:#fff;display:flex;align-items:center;justify-content:center;animation:introOut .55s ease .95s forwards}
-  #intro img{width:min(260px,58vw);height:auto;opacity:0;transform:translateY(10px) scale(.94);animation:introIn .7s cubic-bezier(.22,.61,.36,1) .05s forwards}
+  #intro img{width:min(420px,80vw);height:auto;opacity:0;transform:translateY(10px) scale(.94);animation:introIn .7s cubic-bezier(.22,.61,.36,1) .05s forwards}
   @keyframes introIn{to{opacity:1;transform:none}}
   @keyframes introOut{to{opacity:0;visibility:hidden;pointer-events:none}}
   /* 히어로 스테이지 등장 */
@@ -284,7 +286,7 @@
       <span class="kick">Our Story</span>
       <h3>사랑하는 가족을 생각하며,<br>매일 정성을 다합니다</h3>
       <p class="lead">제가, 그리고 저희 가족이 먹지 못하는 제품은 만들어 팔지 않아요. 7년 넘게 늘 똑같이, 항상 좋은 재료로 매일매일 정성을 다해 준비합니다.</p>
-      <p>2009년 겨울부터 외식업에 몸담아, 수제 디저트로 누적 15억을 팔았어요. 단순 혼합으로 맛과 모양을 일정하게 뽑아내는 '라트리 클래스'만의 생산 로직 — 한 번 구울 노력으로 열 배를 만드는 효율을, 예비 창업자와 이미 매장을 운영하는 분들께 그대로 전해드려요.</p>
+      <p>2009년 겨울부터 외식업에 몸담아, 수제 디저트로 누적 15억을 팔았어요. 단순 혼합으로 맛과 모양을 일정하게 뽑아내는 '라트리 클래스'만의 생산 로직을 통해, 한 번 구울 노력으로 열 배를 만드는 효율을, 예비 창업자와 이미 매장을 운영하는 분들께 그대로 전해드려요.</p>
       <p class="sign">— 라트리 대표 이희연</p>
     </div>
   </div>
@@ -295,7 +297,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kick">Class</span>
-      <h2>배우는 방법</h2>
+      <h2>클래스</h2>
       <p>온라인은 콜로소로, 오프라인은 창업·원데이 클래스로. 원하는 방식으로 시작하세요.</p>
     </div>
 
@@ -326,7 +328,7 @@
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kick">Reviews</span>
-      <h2>수강생분들의 감사한 후기</h2>
+      <h2>수강생분들의<br>감사한 후기</h2>
       <p>수강생 분들이 주시는 정성스러운 후기에, 라트리는 늘 감사함을 느껴요 :)</p>
     </div>
     <div class="rv-grid">
@@ -358,17 +360,24 @@
     <div class="sec-head reveal">
       <span class="kick">Signature</span>
       <h2>라트리 디저트</h2>
-      <p>생과일 케이크·마카롱·쿠키 답례품 — 스마트스토어에서 만나요.</p>
+      <p>생과일 케이크·마카롱·쿠키 답례품 등을 스마트스토어에서 만나보실 수 있습니다.</p>
     </div>
     <div class="prod-grid reveal">
-      <div class="prod"><img src="cake-peach.jpg" alt="복숭아 생크림 케이크" loading="lazy"><span>복숭아 케이크</span></div>
-      <div class="prod"><img src="cake-mango.jpg" alt="망고 케이크" loading="lazy"><span>망고 케이크</span></div>
-      <div class="prod"><img src="cake-grape.jpg" alt="청포도 케이크" loading="lazy"><span>청포도 케이크</span></div>
-      <div class="prod"><img src="cake-blueberry.jpg" alt="블루베리 케이크" loading="lazy"><span>블루베리 케이크</span></div>
-      <div class="prod"><img src="cake-strawberry.jpg" alt="딸기 케이크" loading="lazy"><span>딸기 케이크</span></div>
-      <div class="prod"><img src="cake-kiwi.jpg" alt="키위 케이크" loading="lazy"><span>키위 케이크</span></div>
-      <div class="prod"><img src="gift.jpg" alt="쿠키 답례품" loading="lazy"><span>쿠키 답례품</span></div>
-      <div class="prod"><img src="hero.jpg" alt="라트리 생크림 케이크" loading="lazy"><span>시즌 케이크</span></div>
+      <div class="prod"><img src="prod-01.jpg" alt="갸또쇼콜라 케이크" loading="lazy"><span class="base r">쌀</span><span class="name">갸또쇼콜라케이크</span></div>
+      <div class="prod"><img src="prod-05.jpg" alt="생과일 생크림 쌀케이크" loading="lazy"><span class="base r">쌀</span><span class="name">생과일 생크림쌀케이크</span></div>
+      <div class="prod"><img src="prod-03.jpg" alt="블루베리 요거트 케이크" loading="lazy"><span class="base r">쌀</span><span class="name">블루베리요거트케이크</span></div>
+      <div class="prod"><img src="prod-08.jpg" alt="티라미수" loading="lazy"><span class="base r">쌀</span><span class="name">티라미수</span></div>
+      <div class="prod"><img src="prod-15.jpg" alt="레몬 생크림 케이크" loading="lazy"><span class="name">레몬생크림케이크</span></div>
+      <div class="prod"><img src="prod-11.jpg" alt="와인 무화과 크림치즈" loading="lazy"><span class="base w">밀</span><span class="name">와인무화과 크림치즈</span></div>
+      <div class="prod"><img src="prod-09.jpg" alt="단호박 크림치즈" loading="lazy"><span class="base w">밀</span><span class="name">단호박크림치즈</span></div>
+      <div class="prod"><img src="prod-02.jpg" alt="레드벨벳 쿠키" loading="lazy"><span class="base r">쌀</span><span class="name">레드벨벳쿠키</span></div>
+      <div class="prod"><img src="prod-06.jpg" alt="오레오 초코 스모어" loading="lazy"><span class="base r">쌀</span><span class="name">오레오초코스모어</span></div>
+      <div class="prod"><img src="prod-04.jpg" alt="뽀또 치즈 쿠키" loading="lazy"><span class="base r">쌀</span><span class="name">뽀또치즈쿠키</span></div>
+      <div class="prod"><img src="prod-07.jpg" alt="클래식 월넛 초코 쿠키" loading="lazy"><span class="base r">쌀</span><span class="name">클래식월넛초코쿠키</span></div>
+      <div class="prod"><img src="prod-12.jpg" alt="클래식 초코 월넛 쿠키" loading="lazy"><span class="base w">밀</span><span class="name">클래식초코월넛쿠키</span></div>
+      <div class="prod"><img src="prod-13.jpg" alt="헤이즐넛 다크 초코" loading="lazy"><span class="base w">밀</span><span class="name">헤이즐넛다크초코</span></div>
+      <div class="prod"><img src="prod-10.jpg" alt="말차 화이트 마카다미아" loading="lazy"><span class="base w">밀</span><span class="name">말차화이트마카다미아</span></div>
+      <div class="prod"><img src="prod-14.jpg" alt="황치즈 쿠키" loading="lazy"><span class="base w">밀</span><span class="name">황치즈쿠키</span></div>
     </div>
     <div class="prod-cta"><a href="https://naver.me/x4a9UqyL" target="_blank" rel="noopener" class="btn btn-sage">스마트스토어에서 주문</a></div>
   </div>
