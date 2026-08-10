@@ -401,8 +401,8 @@
 </div>
 
 <script>
-  var top=document.getElementById('top');
-  var onS=function(){top.classList.toggle('solid',window.scrollY>20);};
+  var hdr=document.getElementById('top');
+  var onS=function(){hdr.classList.toggle('solid',window.scrollY>20);};
   onS(); window.addEventListener('scroll',onS,{passive:true});
   var burger=document.getElementById('burger'), drawer=document.getElementById('drawer');
   burger.addEventListener('click',function(){var o=drawer.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false');});
