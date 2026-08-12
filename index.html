@@ -221,7 +221,8 @@
   /* 진입 인트로 (동작 줄이기에도 강제 재생 — 미디어쿼리 가드 없음) */
   #intro{position:fixed;inset:0;z-index:200;background:#fff;display:flex;align-items:center;justify-content:center;transition:opacity .7s ease}
   #intro.done{opacity:0;visibility:hidden;pointer-events:none}
-  #intro video{width:100%;height:100%;object-fit:contain;background:#fff}
+  #intro video{width:100%;height:100%;object-fit:contain;background:#fff;opacity:0;transition:opacity .35s ease}
+  #intro.playing video{opacity:1}
   /* 히어로 스테이지 등장 */
   .hero .kick,.hero h1,.hero-sub,.hero .hero-btns,.hero-media{opacity:0;transform:translateY(16px);animation:riseIn .8s cubic-bezier(.22,.61,.36,1) forwards}
   .hero-media{animation-delay:1.12s} .hero .kick{animation-delay:.98s} .hero h1{animation-delay:1.06s}
@@ -231,7 +232,7 @@
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}#intro{display:none !important}.hero .kick,.hero h1,.hero-sub,.hero .hero-btns,.hero-media{opacity:1 !important;transform:none !important;animation:none !important}</style></noscript>
 </head>
 <body>
-<div id="intro" aria-hidden="true"><video id="introvid" src="intro.mp4" autoplay muted playsinline preload="auto"></video></div>
+<div id="intro" aria-hidden="true"><video id="introvid" src="intro.mp4" autoplay muted playsinline preload="auto" poster="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='16'%20height='9'%3E%3Crect%20width='16'%20height='9'%20fill='%23ffffff'/%3E%3C/svg%3E"></video></div>
 <div class="demo-note">이피웹(YIPI WEB) 제작 샘플 · 영상·일부 일정 정보는 데모용이며 실제 자료로 교체 예정입니다</div>
 
 <header class="top" id="top">
@@ -321,7 +322,6 @@
       <div class="cls reveal"><div class="ci"><img src="class-milcake.jpg" alt="밀케이크 창업반" loading="lazy"></div><div class="cb"><h4>밀케이크 창업반</h4><div class="tag">Cake</div><p>매장 베스트셀러 케이크를 안정적으로 뽑아내는 밀 베이스 과정.</p></div></div>
     </div>
 
-    <div class="event reveal"><b>🎁 7주년 기념 이벤트</b><p>창업반 등록 시 켄우드 핸드믹서 &amp; 스탠드믹서(약 70만원 상당) 증정. 1:1 맞춤 커리큘럼(10회~)은 상담 후 진행돼요.</p></div>
     <div class="class-cta reveal">
       <p class="sched">위 클래스는 예시이며, 모집 정원·일정은 매달 변동돼요. 현재 모집 중인 클래스와 신청 방법은 블로그 공지에서 확인해 주세요.</p>
       <a href="https://m.blog.naver.com/01191787590" target="_blank" rel="noopener" class="btn btn-pink">블로그 클래스 공지 보기</a>
@@ -467,14 +467,16 @@
   // 진입 인트로 정리(애니메이션 종료 후 제거)
   var intro=document.getElementById('intro');
   if(intro){
-    var vid=document.getElementById('introvid'), closed=false;
+    var vid=document.getElementById('introvid'), closed=false, played=false;
     function endIntro(){if(closed)return;closed=true;intro.classList.add('done');setTimeout(function(){intro.style.display='none';},750);}
     if(vid){
+      vid.addEventListener('playing',function(){played=true;intro.classList.add('playing');});
       vid.addEventListener('timeupdate',function(){if(vid.duration&&vid.currentTime>=vid.duration-0.7)endIntro();});
       vid.addEventListener('ended',endIntro);
       vid.addEventListener('error',endIntro);
       intro.addEventListener('click',endIntro);
-      var pr=vid.play(); if(pr&&pr.catch){pr.catch(function(){setTimeout(endIntro,1500);});}
+      var pr=vid.play(); if(pr&&pr.catch){pr.catch(function(){});}
+      setTimeout(function(){if(!played)endIntro();},1400);
       setTimeout(endIntro,6500);
     } else { endIntro(); }
   }
