@@ -128,7 +128,7 @@
   .class-grid{display:grid;grid-template-columns:1fr;gap:clamp(14px,2vw,22px)}
   @media(min-width:640px){.class-grid{grid-template-columns:repeat(2,1fr)}}
   @media(min-width:960px){.class-grid{grid-template-columns:repeat(4,1fr)}}
-  .cls{background:#fff;border:0;border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 16px 40px -28px rgba(120,90,70,.34)}
+  .cls{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
   .cls .ci{aspect-ratio:4/3;overflow:hidden;background:var(--cream)}
   .cls .ci img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s}
   @media(hover:hover){.cls:hover .ci img{transform:scale(1.05)}}
@@ -180,9 +180,9 @@
 
   /* 문의 */
   #contact{text-align:center}
-  #contact .box{max-width:640px;margin:0 auto;background:var(--butter-soft);border:0;border-radius:calc(var(--r)+6px);padding:clamp(36px,5vw,60px)}
+  #contact .box{max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:calc(var(--r)+6px);padding:clamp(36px,5vw,60px)}
   #contact h2{font-family:var(--kr);font-weight:800;letter-spacing:-.01em;font-size:clamp(1.6rem,3.6vw,2.2rem)}
-  #contact p{color:var(--ink);margin:14px 0 26px}
+  #contact p{color:var(--ink2);margin:14px 0 26px}
 
   footer{background:#fff;border-top:1px solid var(--line);padding:clamp(48px,6vw,72px) 0 calc(40px + env(safe-area-inset-bottom))}
   .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:flex-end}
@@ -208,9 +208,9 @@
   #review{background:#fff}
   .rv-grid{display:grid;grid-template-columns:1fr;gap:clamp(14px,2vw,20px)}
   @media(min-width:720px){.rv-grid{grid-template-columns:repeat(2,1fr)}}
-  .rv{background:#fff;border:0;border-left:4px solid var(--honey);border-radius:0 var(--r) var(--r) 0;box-shadow:0 16px 38px -28px rgba(120,90,70,.32);padding:clamp(24px,2.8vw,32px)}
-  .rv .q{display:none}
-  .rv p{font-family:var(--kr);color:var(--ink);font-size:1.02rem;line-height:1.85;margin:0 0 14px}
+  .rv{background:var(--cream2);border:1px solid var(--line);border-radius:var(--r);padding:clamp(22px,2.6vw,30px)}
+  .rv .q{font-family:var(--ser);font-size:2.4rem;color:var(--honey);line-height:.5}
+  .rv p{font-family:var(--kr);color:var(--ink);font-size:1rem;line-height:1.85;margin:6px 0 14px}
   .rv .hl{background:linear-gradient(transparent 58%,var(--butter) 58%);padding:0 .04em}
   .rv .who{font-family:var(--kr);color:var(--ink2);font-size:.82rem;font-weight:600}
   .rv-note{text-align:center;color:var(--faint);font-size:.8rem;margin-top:clamp(22px,3vw,30px)}
