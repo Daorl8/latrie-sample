@@ -97,7 +97,7 @@
   .hero-media .tag span{font-size:.76rem;color:var(--ink2)}
 
   /* 신뢰 지표 */
-  .proof{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .proof{background:#FAF8F3;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,30px);text-align:center}
   @media(min-width:760px){.proof-grid{grid-template-columns:repeat(3,1fr)}}
   .proof .n{font-family:var(--kr);font-weight:800;letter-spacing:-.01em;font-size:clamp(1.7rem,3.6vw,2.5rem);color:var(--honey-d);line-height:1}
@@ -105,20 +105,38 @@
   .proof .s{font-size:.76rem;color:var(--faint);margin-top:4px}
   .proof-note{text-align:center;color:var(--faint);font-size:.8rem;margin-top:clamp(22px,3vw,32px)}
   /* 콜로소 강의 피처 */
-  .coloso-feat{margin-top:clamp(30px,4vw,48px);border:1.5px solid var(--ink);background:#fff}
-  .cf-cover{border-bottom:1.5px solid var(--ink);background:var(--cream);line-height:0}
+  .coloso-feat{margin-top:clamp(30px,4vw,48px);display:flex;flex-direction:column;gap:12px}
+  .cf-cover{background:var(--cream);line-height:0}
   .cf-cover img{width:100%;height:auto;display:block;max-height:280px;object-fit:cover}
-  .cf-main{display:grid;grid-template-columns:1fr}
+  .cf-main{display:grid;grid-template-columns:1fr;gap:12px}
   @media(min-width:760px){.cf-main{grid-template-columns:.44fr .56fr}}
-  .cf-side{background:var(--honey);padding:clamp(26px,3.5vw,42px);display:flex;flex-direction:column;justify-content:center;gap:10px;border-bottom:1.5px solid var(--ink)}
-  @media(min-width:760px){.cf-side{border-bottom:0;border-right:1.5px solid var(--ink)}}
+  .cf-side{background:var(--honey);padding:clamp(26px,3.5vw,42px);display:flex;flex-direction:column;justify-content:center;gap:10px}
   .cf-side .cf-eyebrow{font-family:var(--kr);font-weight:800;font-size:.74rem;letter-spacing:.14em;color:var(--honey-d)}
   .cf-side .cf-title{font-family:var(--kr);font-weight:800;font-size:clamp(1.3rem,2.5vw,1.8rem);line-height:1.28;color:var(--ink)}
-  .cf-body{padding:clamp(26px,3vw,42px);display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+  .cf-body{background:#fff;padding:clamp(26px,3vw,42px);display:flex;flex-direction:column;align-items:flex-start;gap:16px}
   .cf-body .cf-meta{color:var(--ink2);font-size:1rem;line-height:1.85}
   .cf-body .cf-meta b{color:var(--ink);font-weight:700}
   .cf-tags{display:flex;flex-wrap:wrap;gap:8px}
   .cf-tag{font-size:.78rem;font-weight:700;color:var(--honey-d);background:var(--butter-soft);padding:5px 11px}
+  /* 지나온 이력 타임라인 */
+  .tl{max-width:660px;margin:0 auto}
+  .tl-row{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--hair)}
+  .tl-row:last-child{border-bottom:1px solid var(--hair)}
+  .tl-y{font-family:var(--kr);font-weight:800;font-size:1.06rem;color:var(--honey-d)}
+  .tl-y .tl-yd{display:block;font-weight:600;font-size:.82rem;color:var(--ink2)}
+  .tl-c b{font-family:var(--kr);font-weight:700;font-size:1.06rem;color:var(--ink);display:block}
+  .tl-c span{color:var(--ink2);font-size:.92rem}
+  /* 주력상품 */
+  .prod2-grid{display:grid;grid-template-columns:1fr;gap:clamp(16px,2.5vw,26px)}
+  @media(min-width:720px){.prod2-grid{grid-template-columns:1fr 1fr}}
+  .prod2{background:#fff;border:1px solid var(--hair);display:flex;flex-direction:column}
+  .p2-img{aspect-ratio:4/3;overflow:hidden;background:var(--cream)}
+  .p2-img img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s}
+  @media(hover:hover){.prod2:hover .p2-img img{transform:scale(1.04)}}
+  .p2-b{padding:clamp(22px,2.6vw,32px)}
+  .p2-tag{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.06em;color:var(--honey-d);background:var(--butter-soft);padding:5px 11px;margin-bottom:12px}
+  .p2-b h3{font-family:var(--kr);font-weight:800;font-size:clamp(1.3rem,2.4vw,1.7rem);color:var(--ink)}
+  .p2-b p{color:var(--ink2);margin-top:10px;line-height:1.8}
 
   /* 이야기 */
   .story-grid{display:grid;grid-template-columns:1fr;gap:clamp(30px,4vw,56px);align-items:center}
@@ -173,14 +191,6 @@
   .yt-note{text-align:center;color:var(--faint);font-size:.8rem;margin-top:14px}
 
   /* 제품 */
-  .prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.6vw,18px)}
-  @media(min-width:760px){.prod-grid{grid-template-columns:repeat(4,1fr)}}
-  .prod{border-radius:0;overflow:hidden;aspect-ratio:1;background:var(--cream);position:relative;border:1px solid var(--hair)}
-  .prod img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .7s}
-  @media(hover:hover){.prod:hover img{transform:scale(1.05)}}
-  .prod .name{position:absolute;left:12px;bottom:11px;background:rgba(255,255,255,.92);color:var(--ink);font-size:.78rem;font-weight:600;padding:4px 11px;border-radius:0}
-  .prod .base{position:absolute;top:10px;right:10px;color:#fff;font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:0}
-  .prod .base.r{background:var(--honey-d)} .prod .base.w{background:var(--sage-d)}
   .prod-cta{text-align:center;margin-top:clamp(24px,3vw,34px)}
 
   /* 채널 허브 */
@@ -328,6 +338,22 @@
   </div>
 </section>
 
+<!-- 지나온 이력 -->
+<section id="history">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kick">Timeline</span>
+      <h2>지나온 이력</h2>
+    </div>
+    <div class="tl reveal">
+      <div class="tl-row"><div class="tl-y">2019</div><div class="tl-c"><b>라트리 오픈</b><span>디저트 전문 매장 시작</span></div></div>
+      <div class="tl-row"><div class="tl-y">2019</div><div class="tl-c"><b>원데이 클래스 시작</b><span>하루 완성 디저트 클래스</span></div></div>
+      <div class="tl-row"><div class="tl-y">2022</div><div class="tl-c"><b>창업반 클래스 시작</b><span>전수·창업 과정 개설</span></div></div>
+      <div class="tl-row"><div class="tl-y">2022.07<span class="tl-yd">– 2024.09</span></div><div class="tl-c"><b>스마트스토어 운영</b><span>온라인 판매로 매출 확장</span></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- 클래스 -->
 <section id="class">
   <div class="wrap">
@@ -384,30 +410,23 @@
   </div>
 </section>
 
-<!-- 제품 -->
+<!-- 주력상품 -->
 <section id="product">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="kick">Signature</span>
-      <h2>라트리 디저트</h2>
-      <p>주력 상품인 아메리칸 쿠키(택배)와 오프라인 매장의 쌀케이크까지 — 라트리가 매일 굽는 시그니처 디저트를 소개합니다.</p>
+      <h2>주력 상품</h2>
+      <p>매일 구워내는 라트리의 대표 메뉴 — 택배로도, 매장에서도 만나보세요.</p>
     </div>
-    <div class="prod-grid reveal">
-      <div class="prod"><img src="prod-01.jpg" alt="갸또쇼콜라 케이크" loading="lazy"><span class="base r">쌀</span><span class="name">갸또쇼콜라케이크</span></div>
-      <div class="prod"><img src="prod-05.jpg" alt="생과일 생크림 쌀케이크" loading="lazy"><span class="base r">쌀</span><span class="name">생과일 생크림쌀케이크</span></div>
-      <div class="prod"><img src="prod-03.jpg" alt="블루베리 요거트 케이크" loading="lazy"><span class="base r">쌀</span><span class="name">블루베리요거트케이크</span></div>
-      <div class="prod"><img src="prod-08.jpg" alt="티라미수" loading="lazy"><span class="base r">쌀</span><span class="name">티라미수</span></div>
-      <div class="prod"><img src="prod-15.jpg" alt="레몬 생크림 케이크" loading="lazy"><span class="name">레몬생크림케이크</span></div>
-      <div class="prod"><img src="prod-11.jpg" alt="와인 무화과 크림치즈" loading="lazy"><span class="base w">밀</span><span class="name">와인무화과 크림치즈</span></div>
-      <div class="prod"><img src="prod-09.jpg" alt="단호박 크림치즈" loading="lazy"><span class="base w">밀</span><span class="name">단호박크림치즈</span></div>
-      <div class="prod"><img src="prod-02.jpg" alt="레드벨벳 쿠키" loading="lazy"><span class="base r">쌀</span><span class="name">레드벨벳쿠키</span></div>
-      <div class="prod"><img src="prod-06.jpg" alt="오레오 초코 스모어" loading="lazy"><span class="base r">쌀</span><span class="name">오레오초코스모어</span></div>
-      <div class="prod"><img src="prod-04.jpg" alt="뽀또 치즈 쿠키" loading="lazy"><span class="base r">쌀</span><span class="name">뽀또치즈쿠키</span></div>
-      <div class="prod"><img src="prod-07.jpg" alt="클래식 월넛 초코 쿠키" loading="lazy"><span class="base r">쌀</span><span class="name">클래식월넛초코쿠키</span></div>
-      <div class="prod"><img src="prod-12.jpg" alt="클래식 초코 월넛 쿠키" loading="lazy"><span class="base w">밀</span><span class="name">클래식초코월넛쿠키</span></div>
-      <div class="prod"><img src="prod-13.jpg" alt="헤이즐넛 다크 초코" loading="lazy"><span class="base w">밀</span><span class="name">헤이즐넛다크초코</span></div>
-      <div class="prod"><img src="prod-10.jpg" alt="말차 화이트 마카다미아" loading="lazy"><span class="base w">밀</span><span class="name">말차화이트마카다미아</span></div>
-      <div class="prod"><img src="prod-14.jpg" alt="황치즈 쿠키" loading="lazy"><span class="base w">밀</span><span class="name">황치즈쿠키</span></div>
+    <div class="prod2-grid reveal">
+      <article class="prod2">
+        <div class="p2-img"><img src="prod-07.jpg" alt="라트리 아메리칸 쿠키" loading="lazy"></div>
+        <div class="p2-b"><span class="p2-tag">택배 배송</span><h3>아메리칸 쿠키</h3><p>겉은 바삭, 속은 촉촉한 라트리의 시그니처 아메리칸 쿠키를 전국 어디서나 받아보세요.</p></div>
+      </article>
+      <article class="prod2">
+        <div class="p2-img"><img src="prod-05.jpg" alt="라트리 아메리칸 쿠키와 쌀케이크" loading="lazy"></div>
+        <div class="p2-b"><span class="p2-tag">오프라인 매장</span><h3>아메리칸 쿠키 · 쌀케이크</h3><p>갓 구운 아메리칸 쿠키와 쫀득한 생과일 쌀케이크를 매장에서 가장 신선하게.</p></div>
+      </article>
     </div>
     <div class="prod-cta"><a href="https://www.instagram.com/latrie0420/" target="_blank" rel="noopener" class="btn btn-sage">제품 주문·문의는 인스타 DM</a></div>
   </div>
