@@ -105,8 +105,11 @@
   .proof .s{font-size:.76rem;color:var(--faint);margin-top:4px}
   .proof-note{text-align:center;color:var(--faint);font-size:.8rem;margin-top:clamp(22px,3vw,32px)}
   /* 콜로소 강의 피처 */
-  .coloso-feat{margin-top:clamp(30px,4vw,48px);border:1.5px solid var(--ink);background:#fff;display:grid;grid-template-columns:1fr}
-  @media(min-width:760px){.coloso-feat{grid-template-columns:.44fr .56fr}}
+  .coloso-feat{margin-top:clamp(30px,4vw,48px);border:1.5px solid var(--ink);background:#fff}
+  .cf-cover{border-bottom:1.5px solid var(--ink);background:var(--cream);line-height:0}
+  .cf-cover img{width:100%;height:auto;display:block;max-height:280px;object-fit:cover}
+  .cf-main{display:grid;grid-template-columns:1fr}
+  @media(min-width:760px){.cf-main{grid-template-columns:.44fr .56fr}}
   .cf-side{background:var(--honey);padding:clamp(26px,3.5vw,42px);display:flex;flex-direction:column;justify-content:center;gap:10px;border-bottom:1.5px solid var(--ink)}
   @media(min-width:760px){.cf-side{border-bottom:0;border-right:1.5px solid var(--ink)}}
   .cf-side .cf-eyebrow{font-family:var(--kr);font-weight:800;font-size:.74rem;letter-spacing:.14em;color:var(--honey-d)}
@@ -294,6 +297,8 @@
       <div><div class="n">140기+</div><div class="l">전수 창업반</div><div class="s">2022년 시작 · 폐업율 1%</div></div>
     </div>
     <div class="coloso-feat reveal">
+      <div class="cf-cover"><img src="coloso-cover.webp" alt="콜로소 · 라트리 카페 디저트 레시피 클래스" loading="lazy"></div>
+      <div class="cf-main">
       <div class="cf-side">
         <span class="cf-eyebrow">ONLINE CLASS · 콜로소</span>
         <span class="cf-title">일 매출 1억,<br>라트리의 베스트셀러<br>카페 디저트 레시피</span>
@@ -302,6 +307,7 @@
         <p class="cf-meta">실제 매장에서 검증한 오리지널 레시피 <b>21종</b>과 카페 음료 <b>20종</b>을 온라인으로. 창업 전이라면 꼭, 이미 운영 중이라면 바로 메뉴에 적용할 수 있어요.</p>
         <div class="cf-tags"><span class="cf-tag">총 12회 · 3시간 44분</span><span class="cf-tag">평생 시청</span><span class="cf-tag">기초</span></div>
         <a href="https://coloso.co.kr/products/patissier-leeheeyeon" target="_blank" rel="noopener" class="btn btn-pink">콜로소에서 수강하기 →</a>
+      </div>
       </div>
     </div>
     <p class="proof-note">창업반 폐업율은 2022.10–2026.03 첫 창업 오픈 기준입니다.</p>
@@ -384,7 +390,7 @@
     <div class="sec-head reveal">
       <span class="kick">Signature</span>
       <h2>라트리 디저트</h2>
-      <p>주력 상품인 아메리칸 쿠키(택배)와 오프라인 매장의 쌀케이크까지 — 라트리의 시그니처 디저트를 스마트스토어에서 만나보실 수 있습니다.</p>
+      <p>주력 상품인 아메리칸 쿠키(택배)와 오프라인 매장의 쌀케이크까지 — 라트리가 매일 굽는 시그니처 디저트를 소개합니다.</p>
     </div>
     <div class="prod-grid reveal">
       <div class="prod"><img src="prod-01.jpg" alt="갸또쇼콜라 케이크" loading="lazy"><span class="base r">쌀</span><span class="name">갸또쇼콜라케이크</span></div>
@@ -403,7 +409,7 @@
       <div class="prod"><img src="prod-10.jpg" alt="말차 화이트 마카다미아" loading="lazy"><span class="base w">밀</span><span class="name">말차화이트마카다미아</span></div>
       <div class="prod"><img src="prod-14.jpg" alt="황치즈 쿠키" loading="lazy"><span class="base w">밀</span><span class="name">황치즈쿠키</span></div>
     </div>
-    <div class="prod-cta"><a href="https://naver.me/x4a9UqyL" target="_blank" rel="noopener" class="btn btn-sage">스마트스토어에서 주문</a></div>
+    <div class="prod-cta"><a href="https://www.instagram.com/latrie0420/" target="_blank" rel="noopener" class="btn btn-sage">제품 주문·문의는 인스타 DM</a></div>
   </div>
 </section>
 
@@ -413,7 +419,6 @@
     <div class="sec-head reveal"><span class="kick">Channels</span><h2>라트리의 모든 채널</h2></div>
     <div class="links-grid reveal">
       <a class="lk" href="https://coloso.co.kr/products/patissier-leeheeyeon" target="_blank" rel="noopener"><span class="li"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" rx="11" fill="#111111"/><text x="19" y="26" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="800" fill="#fff" text-anchor="middle">c</text></svg></span><span><b>콜로소 클래스</b><span>온라인 강의</span></span></a>
-      <a class="lk" href="https://naver.me/x4a9UqyL" target="_blank" rel="noopener"><span class="li"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" rx="11" fill="#03C75A"/><path d="M13.6 15h10.8l-.9 10.7a1.3 1.3 0 0 1-1.3 1.2h-6.4a1.3 1.3 0 0 1-1.3-1.2L13.6 15z" fill="none" stroke="#fff" stroke-width="2.1"/><path d="M16.1 15.4V14a2.9 2.9 0 0 1 5.8 0v1.4" fill="none" stroke="#fff" stroke-width="2.1"/></svg></span><span><b>스마트스토어</b><span>제품 주문</span></span></a>
       <a class="lk" href="https://m.blog.naver.com/01191787590" target="_blank" rel="noopener"><span class="li"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" rx="11" fill="#03C75A"/><text x="19" y="23.5" font-family="Arial,Helvetica,sans-serif" font-size="10.5" font-weight="800" fill="#fff" text-anchor="middle">blog</text></svg></span><span><b>네이버 블로그</b><span>클래스 공지</span></span></a>
       <a class="lk" href="https://youtube.com/@user-ux4iv7ts7u" target="_blank" rel="noopener"><span class="li"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><rect width="38" height="38" rx="11" fill="#FF0000"/><path d="M16 13.5l9 5.5-9 5.5z" fill="#fff"/></svg></span><span><b>유튜브</b><span>라트리 성장일기</span></span></a>
       <a class="lk" href="https://www.instagram.com/latrie0420/" target="_blank" rel="noopener"><span class="li"><svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="iggrad" cx="28%" cy="106%" r="140%"><stop offset="0" stop-color="#FEDA75"/><stop offset=".28" stop-color="#FA7E1E"/><stop offset=".5" stop-color="#D62976"/><stop offset=".72" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></radialGradient></defs><rect width="38" height="38" rx="11" fill="url(#iggrad)"/><rect x="10.5" y="10.5" width="17" height="17" rx="5.6" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="19" cy="19" r="4.4" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="24.2" cy="13.8" r="1.5" fill="#fff"/></svg></span><span><b>인스타그램</b><span>@latrie0420</span></span></a>
