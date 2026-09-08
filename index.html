@@ -99,10 +99,23 @@
   /* 신뢰 지표 */
   .proof{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,30px);text-align:center}
-  @media(min-width:760px){.proof-grid{grid-template-columns:repeat(4,1fr)}}
+  @media(min-width:760px){.proof-grid{grid-template-columns:repeat(3,1fr)}}
   .proof .n{font-family:var(--kr);font-weight:800;letter-spacing:-.01em;font-size:clamp(1.7rem,3.6vw,2.5rem);color:var(--honey-d);line-height:1}
   .proof .l{font-size:.88rem;color:var(--ink2);margin-top:6px}
+  .proof .s{font-size:.76rem;color:var(--faint);margin-top:4px}
   .proof-note{text-align:center;color:var(--faint);font-size:.8rem;margin-top:clamp(22px,3vw,32px)}
+  /* 콜로소 강의 피처 */
+  .coloso-feat{margin-top:clamp(30px,4vw,48px);border:1.5px solid var(--ink);background:#fff;display:grid;grid-template-columns:1fr}
+  @media(min-width:760px){.coloso-feat{grid-template-columns:.44fr .56fr}}
+  .cf-side{background:var(--honey);padding:clamp(26px,3.5vw,42px);display:flex;flex-direction:column;justify-content:center;gap:10px;border-bottom:1.5px solid var(--ink)}
+  @media(min-width:760px){.cf-side{border-bottom:0;border-right:1.5px solid var(--ink)}}
+  .cf-side .cf-eyebrow{font-family:var(--kr);font-weight:800;font-size:.74rem;letter-spacing:.14em;color:var(--honey-d)}
+  .cf-side .cf-title{font-family:var(--kr);font-weight:800;font-size:clamp(1.3rem,2.5vw,1.8rem);line-height:1.28;color:var(--ink)}
+  .cf-body{padding:clamp(26px,3vw,42px);display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+  .cf-body .cf-meta{color:var(--ink2);font-size:1rem;line-height:1.85}
+  .cf-body .cf-meta b{color:var(--ink);font-weight:700}
+  .cf-tags{display:flex;flex-wrap:wrap;gap:8px}
+  .cf-tag{font-size:.78rem;font-weight:700;color:var(--honey-d);background:var(--butter-soft);padding:5px 11px}
 
   /* 이야기 */
   .story-grid{display:grid;grid-template-columns:1fr;gap:clamp(30px,4vw,56px);align-items:center}
@@ -276,12 +289,22 @@
 <section class="proof">
   <div class="wrap">
     <div class="proof-grid reveal">
-      <div><div class="n">일 1억</div><div class="l">스마트스토어 최고 일매출</div></div>
-      <div><div class="n">30억+</div><div class="l">누적 매출</div></div>
-      <div><div class="n">3,400+</div><div class="l">원데이 클래스 수강생</div></div>
-      <div><div class="n">140기+</div><div class="l">전수 창업반</div></div>
+      <div><div class="n">30억+</div><div class="l">누적 매출</div><div class="s">2019–2024 누적</div></div>
+      <div><div class="n">3,400+</div><div class="l">원데이 클래스 수강생</div><div class="s">2019년 시작</div></div>
+      <div><div class="n">140기+</div><div class="l">전수 창업반</div><div class="s">2022년 시작 · 폐업율 1%</div></div>
     </div>
-    <p class="proof-note">라트리 2019 시작 · 원데이클래스 2019~ · 전수창업반 2022~ · 스마트스토어 일매출 1억·누적 30억+(2022.07–2024.09) · 창업반 폐업율 1%(2022.10–2026.03 첫 창업 오픈 기준)</p>
+    <div class="coloso-feat reveal">
+      <div class="cf-side">
+        <span class="cf-eyebrow">ONLINE CLASS · 콜로소</span>
+        <span class="cf-title">일 매출 1억,<br>라트리의 베스트셀러<br>카페 디저트 레시피</span>
+      </div>
+      <div class="cf-body">
+        <p class="cf-meta">실제 매장에서 검증한 오리지널 레시피 <b>21종</b>과 카페 음료 <b>20종</b>을 온라인으로. 창업 전이라면 꼭, 이미 운영 중이라면 바로 메뉴에 적용할 수 있어요.</p>
+        <div class="cf-tags"><span class="cf-tag">총 12회 · 3시간 44분</span><span class="cf-tag">평생 시청</span><span class="cf-tag">기초</span></div>
+        <a href="https://coloso.co.kr/products/patissier-leeheeyeon" target="_blank" rel="noopener" class="btn btn-pink">콜로소에서 수강하기 →</a>
+      </div>
+    </div>
+    <p class="proof-note">창업반 폐업율은 2022.10–2026.03 첫 창업 오픈 기준입니다.</p>
   </div>
 </section>
 
@@ -306,16 +329,6 @@
       <span class="kick">Class</span>
       <h2>클래스</h2>
       <p>온라인은 콜로소로, 오프라인은 체험형·원데이·전수 창업반으로. 원하는 방식으로 시작하세요.</p>
-    </div>
-
-    <div class="coloso reveal">
-      <div class="cimg"><img src="class-ricecake.jpg" alt="라트리 쌀 케이크" loading="lazy"></div>
-      <div class="cbody">
-        <span class="badge">ONLINE · 콜로소</span>
-        <h3>현장에서 검증된 카페 디저트 레시피</h3>
-        <p>일 매출 1억을 달성한 라트리의 베스트셀러 카페 디저트를 온라인으로. 창업 전이라면 꼭, 이미 매장을 운영 중이라면 바로 메뉴에 적용할 수 있는 커리큘럼으로 구성했어요.</p>
-        <a href="https://coloso.co.kr/products/patissier-leeheeyeon" target="_blank" rel="noopener" class="btn btn-pink">콜로소 강의 보러가기</a>
-      </div>
     </div>
 
     <div class="class-grid">
