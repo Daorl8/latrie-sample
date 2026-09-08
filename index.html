@@ -218,11 +218,14 @@
   /* 이야기 리드 인용 */
   .story-body .lead{font-family:var(--kr);font-weight:600;font-size:clamp(1.06rem,2vw,1.24rem);line-height:1.7;color:var(--ink);margin:16px 0 4px;padding-left:16px;border-left:3px solid var(--butter)}
 
-  /* 진입 인트로 — 로고 CSS 애니메이션(비디오 제거: GPU seam 원천 차단·전 비율 대응) */
+  /* 진입 인트로 — 로고 리빌 애니메이션(비디오 제거·전 비율 대응) */
   #intro{position:fixed;inset:0;z-index:200;background:#fff;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease}
   #intro.done{opacity:0;visibility:hidden;pointer-events:none}
-  #intro .intrologo{width:min(240px,52vw);height:auto;opacity:0;transform:scale(.92);animation:logoIn .8s cubic-bezier(.22,.61,.36,1) forwards}
+  #intro .introwrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+  #intro .intrologo{width:min(300px,66vw);height:auto;opacity:0;transform:translateY(12px) scale(.78);animation:logoIn 1s cubic-bezier(.2,.7,.2,1) .1s forwards}
+  #intro .introline{width:132px;height:3px;background:var(--honey);transform:scaleX(0);transform-origin:center;animation:lineIn .6s cubic-bezier(.22,.61,.36,1) .8s forwards}
   @keyframes logoIn{to{opacity:1;transform:none}}
+  @keyframes lineIn{to{transform:scaleX(1)}}
   /* 히어로 스테이지 등장 */
   .hero .kick,.hero h1,.hero-sub,.hero .hero-btns,.hero-media{opacity:0;transform:translateY(16px);animation:riseIn .8s cubic-bezier(.22,.61,.36,1) forwards}
   .hero-media{animation-delay:1.12s} .hero .kick{animation-delay:.98s} .hero h1{animation-delay:1.06s}
@@ -232,7 +235,7 @@
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}#intro{display:none !important}.hero .kick,.hero h1,.hero-sub,.hero .hero-btns,.hero-media{opacity:1 !important;transform:none !important;animation:none !important}</style></noscript>
 </head>
 <body>
-<div id="intro" aria-hidden="true"><img class="intrologo" src="logo.png" alt=""></div>
+<div id="intro" aria-hidden="true"><div class="introwrap"><img class="intrologo" src="logo.png" alt=""><span class="introline" aria-hidden="true"></span></div></div>
 <div class="demo-note">이피웹(YIPI WEB) 제작 샘플 · 영상·일부 일정 정보는 데모용이며 실제 자료로 교체 예정입니다</div>
 
 <header class="top" id="top">
@@ -469,7 +472,7 @@
     var closed=false;
     function endIntro(){if(closed)return;closed=true;intro.classList.add('done');setTimeout(function(){intro.style.display='none';},650);}
     intro.addEventListener('click',endIntro);
-    setTimeout(endIntro,1700);
+    setTimeout(endIntro,2100);
   }
   // 리빌
   var revs=document.querySelectorAll('.reveal');
