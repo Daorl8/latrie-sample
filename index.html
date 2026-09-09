@@ -110,8 +110,12 @@
   .cf-cover img{width:100%;height:auto;display:block;max-height:280px;object-fit:cover}
   .cf-main{display:grid;grid-template-columns:1fr;gap:12px}
   @media(min-width:760px){.cf-main{grid-template-columns:.44fr .56fr}}
-  .cf-side{position:relative;background:#010101;border:2px solid var(--honey);overflow:hidden;min-height:200px;display:flex}
-  .cf-side .cf-logo{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+  .cf-side{position:relative;background:#0A0A0A;border:2px solid var(--honey);overflow:hidden;min-height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(34px,4.5vw,48px) 22px}
+  .cf-side .cf-logo{display:flex;flex-direction:column;align-items:center;gap:15px}
+  .cf-side .clg{font-family:var(--kr);font-weight:800;font-size:clamp(2.5rem,6.4vw,3.5rem);letter-spacing:-.025em;color:#fff;line-height:1}
+  .cf-side .clg i{color:#FF9500;font-style:normal}
+  .cf-side .cln{font-family:var(--kr);font-weight:500;font-size:clamp(.82rem,1.7vw,1rem);letter-spacing:-.01em;color:#E9E9E9;line-height:1.45;max-width:20rem}
+  .cf-side .cln b{font-weight:800;color:#fff}
   .cf-side .cf-eyebrow{position:absolute;top:16px;left:18px;z-index:1;font-family:var(--kr);font-weight:700;font-size:.74rem;letter-spacing:.14em;color:#fff}
   .cf-body{background:#fff;padding:clamp(26px,3vw,42px);display:flex;flex-direction:column;align-items:flex-start;gap:16px}
   .cf-body .cf-meta{color:var(--ink2);font-size:1rem;line-height:1.85}
@@ -311,8 +315,11 @@
       <div class="cf-cover"><img src="coloso-cover.webp" alt="콜로소 · 라트리 카페 디저트 레시피 클래스" loading="lazy"></div>
       <div class="cf-main">
       <div class="cf-side">
-        <img class="cf-logo" src="coloso-logo.webp" alt="콜로소 Coloso">
         <span class="cf-eyebrow">ONLINE CLASS · 콜로소</span>
+        <div class="cf-logo">
+          <span class="clg">Coloso<i>.</i></span>
+          <span class="cln">업계 최고 <b>전문가</b>의 <b>실무 노하우</b><br>온라인 클래스</span>
+        </div>
       </div>
       <div class="cf-body">
         <p class="cf-meta">실제 매장에서 검증한 오리지널 레시피 <b>21종</b>과 카페 음료 <b>20종</b>을 온라인 클래스로 제공해요. 창업 전이라면 꼭, 이미 운영 중이라면 바로 메뉴에 적용할 수 있도록 도와드려요.</p>
