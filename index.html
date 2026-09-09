@@ -110,9 +110,9 @@
   .cf-cover img{width:100%;height:auto;display:block;max-height:280px;object-fit:cover}
   .cf-main{display:grid;grid-template-columns:1fr;gap:12px}
   @media(min-width:760px){.cf-main{grid-template-columns:.44fr .56fr}}
-  .cf-side{background:var(--honey);padding:clamp(26px,3.5vw,42px);display:flex;flex-direction:column;justify-content:center;gap:10px}
-  .cf-side .cf-eyebrow{font-family:var(--kr);font-weight:700;font-size:.74rem;letter-spacing:.14em;color:var(--honey-d)}
-  .cf-side .cf-title{font-family:var(--kr);font-weight:700;font-size:clamp(1.3rem,2.5vw,1.8rem);line-height:1.28;color:var(--ink)}
+  .cf-side{position:relative;background:#121212;border:2px solid var(--honey);overflow:hidden;min-height:200px;display:flex}
+  .cf-side .cf-logo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .cf-side .cf-eyebrow{position:absolute;top:16px;left:18px;z-index:1;font-family:var(--kr);font-weight:700;font-size:.74rem;letter-spacing:.14em;color:#fff}
   .cf-body{background:#fff;padding:clamp(26px,3vw,42px);display:flex;flex-direction:column;align-items:flex-start;gap:16px}
   .cf-body .cf-meta{color:var(--ink2);font-size:1rem;line-height:1.85}
   .cf-body .cf-meta b{color:var(--ink);font-weight:700}
@@ -311,8 +311,8 @@
       <div class="cf-cover"><img src="coloso-cover.webp" alt="콜로소 · 라트리 카페 디저트 레시피 클래스" loading="lazy"></div>
       <div class="cf-main">
       <div class="cf-side">
+        <img class="cf-logo" src="coloso-logo.webp" alt="콜로소 Coloso">
         <span class="cf-eyebrow">ONLINE CLASS · 콜로소</span>
-        <span class="cf-title">일 매출 1억,<br>라트리의 베스트셀러<br>카페 디저트 레시피</span>
       </div>
       <div class="cf-body">
         <p class="cf-meta">실제 매장에서 검증한 오리지널 레시피 <b>21종</b>과 카페 음료 <b>20종</b>을 온라인 클래스로 제공해요. 창업 전이라면 꼭, 이미 운영 중이라면 바로 메뉴에 적용할 수 있도록 도와드려요.</p>
